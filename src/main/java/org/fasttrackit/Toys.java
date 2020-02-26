@@ -1,10 +1,8 @@
 package org.fasttrackit;
 
-public class Vet {
+public class Toys {
     String name;
-    String specialization;
     double price;
     boolean availability;
-    int age;
-    int experience;
+    boolean damaged;
 }

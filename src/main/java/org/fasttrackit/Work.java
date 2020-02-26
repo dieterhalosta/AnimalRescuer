@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
-public class PlayTime {
+public class Work {
     String name;
     double duration;
+    double salary;
 }
