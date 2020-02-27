@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.util.Date;
+
 /**
  * Hello world!
  *
@@ -26,6 +28,7 @@ public class App
         food1.company = "Petry";
         food1.origin = "Cluj";
         food1.premium = false;
+        food1.expirationDate = new Date(2020, 04, 22);
 
         PlayTime playTime1 = new PlayTime();
         playTime1.name = "Fetch";
