@@ -36,9 +36,9 @@ public class App
         animal.age = 3;
         animal.healthLevel = 2;
         animal.hungerLevel = 2;
-        animal.happiness = 2;
-        animal.food = food1;
-        animal.playTime = playTime1;
+        animal.happinessLevel = 2;
+        animal.favoriteFood = food1;
+        animal.favoriteActivity = playTime1;
 
         Vet vet1 = new Vet();
         vet1.name = "Geo";

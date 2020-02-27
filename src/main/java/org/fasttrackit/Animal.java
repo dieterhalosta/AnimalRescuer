@@ -5,7 +5,7 @@ public class Animal {
     int age;
     int healthLevel;
     int hungerLevel;
-    int happiness;
-    Food food;
-    PlayTime playTime;
+    int happinessLevel;
+    Food favoriteFood;
+    PlayTime favoriteActivity;
 }
