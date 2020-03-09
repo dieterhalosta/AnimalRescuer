@@ -1,5 +1,6 @@
 package org.fasttrackit;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -28,7 +29,7 @@ public class App
         food1.company = "Petry";
         food1.origin = "Cluj";
         food1.premium = false;
-        food1.expirationDate = new Date(2020, 04, 22);
+        food1.expirationDate = LocalDate.of(2020, 2, 10);
 
         PlayTime playTime1 = new PlayTime();
         playTime1.name = "Fetch";
