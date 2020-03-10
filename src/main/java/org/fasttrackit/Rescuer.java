@@ -6,4 +6,22 @@ public class Rescuer extends Human {
     public Rescuer(String name) {
         super(name);
     }
+
+    public void feeding (Animal animal, Food food) {
+        System.out.println(getName() + " just gave some " + food.getName() + " to " + animal.name + "!");
+        animal.hungerLevel--;
+        System.out.println(animal.name + "s hunger level is now: " + animal.hungerLevel);
+        animal.happinessLevel++;
+        System.out.println(animal.name + "s happiness level is now: " + animal.happinessLevel);
+        animal.healthLevel++;
+        System.out.println(animal.name + "s health level is now: " + animal.healthLevel);
+    }
+
+    public void palying (Animal animal, PlayTime playTime) {
+        System.out.println(getName() + " just played some " + playTime.name + " with " + animal.name + "!");
+        animal.happinessLevel++;
+        System.out.println(animal.name + "s happiness level is now: " + animal.happinessLevel);
+        animal.hungerLevel++;
+        System.out.println(animal.name + "s hunger level is now: " + animal.hungerLevel);
+    }
 }

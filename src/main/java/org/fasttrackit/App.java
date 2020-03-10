@@ -42,8 +42,8 @@ public class App
         animal.name = "Apple";
         animal.age = 3;
         animal.healthLevel = 2;
-        animal.hungerLevel = 2;
-        animal.happinessLevel = 2;
+        animal.hungerLevel = 10;
+        animal.happinessLevel = 1;
         animal.favoriteFood = food1;
         animal.favoriteActivity = playTime1;
 
@@ -62,6 +62,7 @@ public class App
         System.out.println("Vet name is: " + vet1.getName());
         System.out.println("Rescuer works as: " + coder.getName());
         System.out.println("Animal food is: " + food1.getName());
-
+        rescuer.feeding(animal,food1);
+        rescuer.palying(animal,playTime1);
     }
 }
