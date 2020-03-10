@@ -15,14 +15,17 @@ public class App
         System.out.println( "Welcome to the AnimalRescuer!" );
         System.out.println("----------------------------------");
 
-        Rescuer rescuer = new Rescuer();
-        rescuer.name = "Adi";
+        Rescuer rescuer = new Rescuer("Adi");
         rescuer.budget = 300.12;
         rescuer.age = 22;
         rescuer.gender = "Male";
 
-        Food food1 = new Food ();
-        food1.name = "Carne";
+        Work coder = new Work("Programator");
+        coder.duration = 7.5;
+        coder.place = "NTT";
+        coder.salary = 8000;
+
+        Food food1 = new Food ("Carne");
         food1.price = 22.1;
         food1.availability = true;
         food1.quantity = 2.5;
@@ -44,8 +47,7 @@ public class App
         animal.favoriteFood = food1;
         animal.favoriteActivity = playTime1;
 
-        Vet vet1 = new Vet();
-        vet1.name = "Geo";
+        Vet vet1 = new Vet("Geo");
         vet1.specialization = "Dogs";
         vet1.price = 80.2;
         vet1.availability = true;
@@ -56,6 +58,10 @@ public class App
         game1.animal = animal;
         game1.rescuer = rescuer;
         game1.vet = vet1;
+        System.out.println("Rescuer name is: " + rescuer.getName());
+        System.out.println("Vet name is: " + vet1.getName());
+        System.out.println("Rescuer works as: " + coder.getName());
+        System.out.println("Animal food is: " + food1.getName());
 
     }
 }

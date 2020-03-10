@@ -7,4 +7,8 @@ public class Food extends Supplies{
     LocalDate expirationDate;
     double quantity;
     String origin;
+
+    public Food(String name) {
+        super(name);
+    }
 }
