@@ -1,8 +1,5 @@
 package org.fasttrackit;
 
-public class Toys {
-    String name;
-    double price;
-    boolean availability;
+public class Toys extends Supplies {
     boolean damaged;
 }

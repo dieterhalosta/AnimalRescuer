@@ -1,8 +1,6 @@
 package org.fasttrackit;
 
-public class PetShop {
-    String name;
-    String place;
+public class PetShop extends Places{
     boolean open;
     Toys toys;
 }
