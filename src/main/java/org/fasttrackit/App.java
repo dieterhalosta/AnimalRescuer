@@ -32,12 +32,25 @@ public class App
         food1.quantity = 2.5;
         food1.company = "Petry";
         food1.origin = "Cluj";
-        food1.premium = false;
-        food1.expirationDate = LocalDate.of(2020, 2, 10);
+        food1.premium = true;
+        food1.expirationDate = LocalDate.of(2021, 4, 10);
+
+        Food food2 = new Food ("Purina");
+        food2.price = 12.1;
+        food2.availability = true;
+        food2.quantity = 1.5;
+        food2.company = "Mars";
+        food2.origin = "Poland";
+        food2.premium = false;
+        food1.expirationDate = LocalDate.of(2020, 8, 10);
 
         PlayTime playTime1 = new PlayTime();
         playTime1.name = "Fetch";
         playTime1.duration = 2.2;
+
+        PlayTime playTime2 = new PlayTime();
+        playTime2.name = "Scratch";
+        playTime2.duration = 0.5;
 
         Dog dog = new Dog("Apple");
         dog.age = 3;
@@ -62,6 +75,8 @@ public class App
         System.out.println("Vet name is: " + vet1.getName());
         System.out.println("Animal food is: " + food1.getName());
         rescuer.feeding(dog,food1);
-        rescuer.palying(dog,playTime1);
+        rescuer.playing(dog,playTime1);
+        //rescuer.feeding(dog,food2);
+        //rescuer.playing(dog,playTime2);
     }
 }
