@@ -1,10 +1,8 @@
 package org.fasttrackit;
 
-public class Work extends Places{
+public class Work {
+    String name;
+    String place;
     double duration;
     double salary;
-
-    public Work(String name) {
-        super(name);
-    }
 }

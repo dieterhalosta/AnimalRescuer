@@ -20,7 +20,8 @@ public class App
         rescuer.age = 22;
         rescuer.gender = "Male";
 
-        Work coder = new Work("Programator");
+        Work coder = new Work();
+        coder.name = "Programator";
         coder.duration = 7.5;
         coder.place = "NTT";
         coder.salary = 8000;
@@ -38,14 +39,13 @@ public class App
         playTime1.name = "Fetch";
         playTime1.duration = 2.2;
 
-        Animal animal = new Animal();
-        animal.name = "Apple";
-        animal.age = 3;
-        animal.healthLevel = 2;
-        animal.hungerLevel = 10;
-        animal.happinessLevel = 1;
-        animal.favoriteFood = food1;
-        animal.favoriteActivity = playTime1;
+        Dog dog = new Dog("Apple");
+        dog.age = 3;
+        dog.healthLevel = 2;
+        dog.hungerLevel = 10;
+        dog.happinessLevel = 1;
+        dog.favoriteFood = food1;
+        dog.favoriteActivity = playTime1;
 
         Vet vet1 = new Vet("Geo");
         vet1.specialization = "Dogs";
@@ -55,14 +55,13 @@ public class App
         vet1.experience = 20;
 
         Game game1 = new Game();
-        game1.animal = animal;
+        game1.animal = dog;
         game1.rescuer = rescuer;
         game1.vet = vet1;
         System.out.println("Rescuer name is: " + rescuer.getName());
         System.out.println("Vet name is: " + vet1.getName());
-        System.out.println("Rescuer works as: " + coder.getName());
         System.out.println("Animal food is: " + food1.getName());
-        rescuer.feeding(animal,food1);
-        rescuer.palying(animal,playTime1);
+        rescuer.feeding(dog,food1);
+        rescuer.palying(dog,playTime1);
     }
 }
