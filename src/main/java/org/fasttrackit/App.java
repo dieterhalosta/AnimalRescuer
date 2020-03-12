@@ -26,7 +26,7 @@ public class App
         coder.place = "NTT";
         coder.salary = 8000;
 
-        Food food1 = new Food ("Carne");
+        Food food1 = new Food ("Meat");
         food1.price = 22.1;
         food1.availability = true;
         food1.quantity = 2.5;
@@ -57,8 +57,8 @@ public class App
         dog.healthLevel = 2;
         dog.hungerLevel = 10;
         dog.happinessLevel = 1;
-        dog.favoriteFood = food1;
-        dog.favoriteActivity = playTime1;
+        dog.favoriteFood = "Meat";
+        dog.favoriteActivity = "Fetch";
 
         Vet vet1 = new Vet("Geo");
         vet1.specialization = "Dogs";
@@ -75,7 +75,7 @@ public class App
         System.out.println("Vet name is: " + vet1.getName());
         System.out.println("Animal food is: " + food1.getName());
         rescuer.feeding(dog,food1);
-        rescuer.playing(dog,playTime1);
+        //rescuer.playing(dog,playTime1);
         //rescuer.feeding(dog,food2);
         //rescuer.playing(dog,playTime2);
     }

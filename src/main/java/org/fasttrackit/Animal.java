@@ -6,8 +6,8 @@ public class Animal {
     int healthLevel;
     int hungerLevel;
     int happinessLevel;
-    Food favoriteFood;
-    PlayTime favoriteActivity;
+    String favoriteFood;
+    String favoriteActivity;
 
     public Animal(String name) {
         this.name = name;
@@ -15,5 +15,15 @@ public class Animal {
 
     public String getName() {
         return name;
+    }
+
+
+
+    public String getFavoriteFood() {
+        return favoriteFood;
+    }
+
+    public String getFavoriteActivity() {
+        return favoriteActivity;
     }
 }
