@@ -75,7 +75,7 @@ public class App
         System.out.println("Vet name is: " + vet1.getName());
         System.out.println("Animal food is: " + food1.getName());
         rescuer.feeding(dog,food1);
-        //rescuer.playing(dog,playTime1);
+        rescuer.playing(dog,playTime1);
         //rescuer.feeding(dog,food2);
         //rescuer.playing(dog,playTime2);
     }
