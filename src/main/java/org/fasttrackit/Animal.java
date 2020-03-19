@@ -17,8 +17,6 @@ public class Animal {
         return name;
     }
 
-
-
     public String getFavoriteFood() {
         return favoriteFood;
     }

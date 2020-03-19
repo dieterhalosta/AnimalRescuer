@@ -1,12 +1,14 @@
 package org.fasttrackit;
 
 import java.time.LocalDate;
-import java.util.Date;
+
 
 /**
  * Hello world!
  *
  */
+
+
 public class App 
 {
     public static void main( String[] args )
@@ -15,17 +17,20 @@ public class App
         System.out.println( "Welcome to the AnimalRescuer!" );
         System.out.println("----------------------------------");
 
+        //Rescuer
         Rescuer rescuer = new Rescuer("Adi");
         rescuer.budget = 300.12;
         rescuer.age = 22;
         rescuer.gender = "Male";
 
+        //Work
         Work coder = new Work();
         coder.name = "Programator";
         coder.duration = 7.5;
         coder.place = "NTT";
         coder.salary = 8000;
 
+        //Food
         Food food1 = new Food ("Meat");
         food1.price = 22.1;
         food1.availability = true;
@@ -44,6 +49,7 @@ public class App
         food2.premium = false;
         food1.expirationDate = LocalDate.of(2020, 8, 10);
 
+        //PlayTime
         PlayTime playTime1 = new PlayTime();
         playTime1.name = "Fetch";
         playTime1.duration = 2.2;
@@ -52,6 +58,7 @@ public class App
         playTime2.name = "Scratch";
         playTime2.duration = 0.5;
 
+        //Rescued Animal
         Dog dog = new Dog("Apple");
         dog.age = 3;
         dog.healthLevel = 2;
@@ -60,6 +67,7 @@ public class App
         dog.favoriteFood = "Meat";
         dog.favoriteActivity = "Fetch";
 
+        //Vet
         Vet vet1 = new Vet("Geo");
         vet1.specialization = "Dogs";
         vet1.price = 80.2;
@@ -67,6 +75,7 @@ public class App
         vet1.age = 45;
         vet1.experience = 20;
 
+        //Game
         Game game1 = new Game();
         game1.animal = dog;
         game1.rescuer = rescuer;
