@@ -19,61 +19,61 @@ public class App
 
         //Rescuer
         Rescuer rescuer = new Rescuer("Adi");
-        rescuer.budget = 300.12;
-        rescuer.age = 22;
-        rescuer.gender = "Male";
+        rescuer.setBudget(300.12);
+        rescuer.setAge(22);
+        rescuer.setGender("Male");
 
         //Work
         Work coder = new Work();
-        coder.name = "Programator";
-        coder.duration = 7.5;
-        coder.place = "NTT";
-        coder.salary = 8000;
+        coder.setName("Programator");
+        coder.setDuration(7.5);
+        coder.setPlace("NTT");
+        coder.setSalary(8000);
 
         //Food
         Food food1 = new Food ("Meat");
-        food1.price = 22.1;
-        food1.availability = true;
-        food1.quantity = 2.5;
-        food1.company = "Petry";
-        food1.origin = "Cluj";
-        food1.premium = true;
-        food1.expirationDate = LocalDate.of(2021, 4, 10);
+        food1.setPrice(22.1);
+        food1.setAvailability(true);
+        food1.setQuantity(2.5);
+        food1.setCompany("Petry");
+        food1.setOrigin("Cluj");
+        food1.setPremium(true);
+        food1.setExpirationDate(LocalDate.of(2021, 4, 10));
 
         Food food2 = new Food ("Purina");
-        food2.price = 12.1;
-        food2.availability = true;
-        food2.quantity = 1.5;
-        food2.company = "Mars";
-        food2.origin = "Poland";
-        food2.premium = false;
-        food1.expirationDate = LocalDate.of(2020, 8, 10);
+        food2.setPrice(12.1);
+        food2.setAvailability(true);
+        food2.setQuantity(1.5);
+        food2.setCompany("Mars");
+        food2.setOrigin("Poland");
+        food2.setPremium(false);
+        food1.setExpirationDate(LocalDate.of(2020, 8, 10));
 
         //PlayTime
         PlayTime playTime1 = new PlayTime();
-        playTime1.name = "Fetch";
-        playTime1.duration = 2.2;
+        playTime1.setName("Fetch");
+        playTime1.setDuration(2.2);
 
         PlayTime playTime2 = new PlayTime();
-        playTime2.name = "Scratch";
-        playTime2.duration = 0.5;
+        playTime2.setName("Scratch");
+        playTime2.setDuration(0.5);
 
         //Rescued Animal
         Dog dog = new Dog("Apple");
-        dog.age = 3;
-        dog.healthLevel = 2;
-        dog.hungerLevel = 10;
-        dog.happinessLevel = 1;
-        dog.favoriteFood = "Meat";
-        dog.favoriteActivity = "Fetch";
+        dog.setAge(3);
+        dog.setHealthLevel(2);
+        dog.setHungerLevel(10);
+        dog.setHappinessLevel(1);
+        dog.setFavoriteFood("Meat");
+        dog.setFavoriteActivity("Fetch");
 
         //Vet
         Vet vet1 = new Vet("Geo");
-        vet1.specialization = "Dogs";
-        vet1.price = 80.2;
-        vet1.availability = true;
-        vet1.age = 45;
-        vet1.experience = 20;
+        vet1.setSpecialization("Dogs");
+        vet1.setPrice(80.2);
+        vet1.setAvailability(true);
+        vet1.setAge(45);
+        vet1.setExperience(20);
 
         //Game
         Game game1 = new Game();

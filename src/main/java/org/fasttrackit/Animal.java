@@ -2,12 +2,12 @@ package org.fasttrackit;
 
 public class Animal {
     private String name;
-    int age;
-    int healthLevel;
-    int hungerLevel;
-    int happinessLevel;
-    String favoriteFood;
-    String favoriteActivity;
+    private int age;
+    private int healthLevel;
+    private int hungerLevel;
+    private int happinessLevel;
+    private String favoriteFood;
+    private String favoriteActivity;
 
     public Animal(String name) {
         this.name = name;
@@ -21,7 +21,48 @@ public class Animal {
         return favoriteFood;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getHealthLevel() {
+        return healthLevel;
+    }
+
+    public void setHealthLevel(int healthLevel) {
+        this.healthLevel = healthLevel;
+    }
+
+    public int getHungerLevel() {
+        return hungerLevel;
+    }
+
+    public void setHungerLevel(int hungerLevel) {
+        this.hungerLevel = hungerLevel;
+    }
+
+    public int getHappinessLevel() {
+        return happinessLevel;
+    }
+
+    public void setHappinessLevel(int happinessLevel) {
+        this.happinessLevel = happinessLevel;
+
+    }
+
+    public void setFavoriteFood(String favoriteFood) {
+        this.favoriteFood = favoriteFood;
+    }
+
     public String getFavoriteActivity() {
         return favoriteActivity;
+    }
+
+    public void setFavoriteActivity(String favoriteActivity) {
+        this.favoriteActivity = favoriteActivity;
     }
 }

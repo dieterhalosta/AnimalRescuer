@@ -1,9 +1,17 @@
 package org.fasttrackit;
 
 public class Dog extends Animal {
-    int legs;
+    private int legs;
 
     public Dog(String name) {
         super(name);
+    }
+
+    public int getLegs() {
+        return legs;
+    }
+
+    public void setLegs(int legs) {
+        this.legs = legs;
     }
 }
