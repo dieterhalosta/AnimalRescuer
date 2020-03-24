@@ -40,18 +40,18 @@ public class App
         food1.setPremium(true);
         food1.setExpirationDate(LocalDate.of(2021, 4, 10));
 
-        Food food2 = new Food ("Purina");
+        Food food2 = new Food ("Fish");
         food2.setPrice(12.1);
         food2.setAvailability(true);
         food2.setQuantity(1.5);
-        food2.setCompany("Mars");
-        food2.setOrigin("Poland");
+        food2.setCompany("Ocean");
+        food2.setOrigin("Norway");
         food2.setPremium(false);
         food1.setExpirationDate(LocalDate.of(2020, 8, 10));
 
         //PlayTime
         PlayTime playTime1 = new PlayTime();
-        playTime1.setName("Fetch");
+        playTime1.setName("Petting");
         playTime1.setDuration(2.2);
 
         PlayTime playTime2 = new PlayTime();
@@ -63,9 +63,17 @@ public class App
         dog.setAge(3);
         dog.setHealthLevel(2);
         dog.setHungerLevel(10);
-        dog.setHappinessLevel(1);
+        dog.setHappinessLevel(6);
         dog.setFavoriteFood("Meat");
         dog.setFavoriteActivity("Fetch");
+
+        Cat cat = new Cat ("Mitzi");
+        cat.setAge(2);
+        cat.setHealthLevel(4);
+        cat.setHungerLevel(8);
+        cat.setHappinessLevel(4);
+        cat.setFavoriteFood("Fish");
+        cat.setFavoriteActivity("Petting");
 
         //Vet
         Vet vet1 = new Vet("Geo");
@@ -85,6 +93,9 @@ public class App
         System.out.println("Animal food is: " + food1.getName());
         rescuer.feeding(dog,food1);
         rescuer.playing(dog,playTime1);
+        rescuer.playing(cat,playTime2);
+        dog.displayHappiness();
+        cat.displayHappiness();
         //rescuer.feeding(dog,food2);
         //rescuer.playing(dog,playTime2);
     }

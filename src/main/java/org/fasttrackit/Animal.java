@@ -13,6 +13,15 @@ public class Animal {
         this.name = name;
     }
 
+    public void displayHappiness() {
+        System.out.println("Happiness level for " + getName() + ": " + getHappinessLevel());
+        if (getHappinessLevel()>5) {
+            System.out.println(getName() + " is happy.");
+        } else {
+            System.out.println(getName() + " is not happy. You should play with " + getName() + ".");
+        }
+    }
+
     public String getName() {
         return name;
     }
