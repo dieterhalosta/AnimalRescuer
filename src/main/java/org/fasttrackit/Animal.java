@@ -18,7 +18,7 @@ public class Animal {
         if (getHappinessLevel()>5) {
             System.out.println(getName() + " is happy.");
         } else {
-            System.out.println(getName() + " is not happy. You should play with " + getName() + ".");
+            System.out.println(getName() + " is not happy. You should play" + getFavoriteActivity() + " with " + getName() + ".");
         }
     }
 

@@ -59,15 +59,15 @@ public class App
         playTime2.setDuration(0.5);
 
         //Rescued Animal
-        Dog dog = new Dog("Apple");
+        Animal dog = new Dog("Apple");
         dog.setAge(3);
-        dog.setHealthLevel(2);
+        dog.setHealthLevel(3);
         dog.setHungerLevel(10);
-        dog.setHappinessLevel(6);
+        dog.setHappinessLevel(2);
         dog.setFavoriteFood("Meat");
         dog.setFavoriteActivity("Fetch");
 
-        Cat cat = new Cat ("Mitzi");
+        Animal cat = new Cat ("Mitzi");
         cat.setAge(2);
         cat.setHealthLevel(4);
         cat.setHungerLevel(8);
@@ -89,14 +89,21 @@ public class App
         game1.rescuer = rescuer;
         game1.vet = vet1;
         System.out.println("Rescuer name is: " + rescuer.getName());
-        System.out.println("Vet name is: " + vet1.getName());
-        System.out.println("Animal food is: " + food1.getName());
-        rescuer.feeding(dog,food1);
-        rescuer.playing(dog,playTime1);
-        rescuer.playing(cat,playTime2);
-        dog.displayHappiness();
-        cat.displayHappiness();
+        //System.out.println("Vet name is: " + vet1.getName());
+
+        // dog actions
+        //rescuer.feeding(dog,food1);
+        //rescuer.playing(dog,playTime1);
         //rescuer.feeding(dog,food2);
         //rescuer.playing(dog,playTime2);
+        //dog.displayHappiness();
+
+        // cat actions
+        //rescuer.playing(cat,playTime2);
+        rescuer.playing(cat, playTime1);
+        rescuer.feeding(cat, food2);
+        //rescuer.feeding(cat, food1);
+        cat.displayHappiness();
+
     }
 }

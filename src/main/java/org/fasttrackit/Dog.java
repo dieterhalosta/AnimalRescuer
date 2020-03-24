@@ -20,7 +20,7 @@ public class Dog extends Animal {
         if (getHappinessLevel()>5) {
             System.out.println(getName() + " is shaking the tail.");
         } else {
-            System.out.println(getName() + " is not happy. You should play with " + getName() + ".");
+            System.out.println(getName() + " is not happy. You should play" + getFavoriteActivity() + " with " + getName() + ".");
         }
     }
 }
