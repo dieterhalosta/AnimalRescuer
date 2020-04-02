@@ -100,9 +100,9 @@ public class Game {
     private void displayFoods() {
         System.out.println("This are the available foods: ");
 
-        for (int i = 0; i<availableFood.size(); i++){
-            if (availableFood.get(i) != null) {
-                System.out.println((i +1) + ". " + availableFood.get(i).getName());
+        for (Food food : availableFood){
+            if (food.getName() != null) {
+                System.out.println(food.getName());
             }
         }
     }
