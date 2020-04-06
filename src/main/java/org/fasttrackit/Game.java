@@ -2,42 +2,45 @@ package org.fasttrackit;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Game {
-//    Rescuer rescuer;
-//    Animal animal;
-//    Vet vet;
-
+    Scanner scanner = new Scanner(System.in);
     private Animal[] animals = new Animal[2];
     private List<Food> availableFood = new ArrayList<Food>();
     private PlayTime[] availableActivities = new PlayTime[4];
+    private Animal selectedAnimal;
+
 
     public void start(){
-        System.out.println("Let's start!");
-        String playerName = initializeUser();
-        Human player = new Rescuer(playerName);
-        System.out.println("Hello " + player.getName());
+
         initializeAnimals();
+        initializeUser();
         displayAnimals();
-        Animal selectedAnimal = getSelectedAnimalFromUser();
-        System.out.println("Selected animal: " + selectedAnimal.getName() + " status: \nHealth level: " + selectedAnimal.getHealthLevel() + "\nHunger Level: " + selectedAnimal.getHungerLevel() + "\nHappiness Level: " + selectedAnimal.getHappinessLevel());
+        selectedAnimal = getSelectedAnimalFromUser();
+        String userAnimalName = setAnimalName();
+        selectedAnimal.setName(userAnimalName);
+        System.out.println(selectedAnimal.getName() + "'s status: \nHappiness Level: " + selectedAnimal.getHappinessLevel() + "\nHunger Level: " + selectedAnimal.getHungerLevel());
         initFood();
-        displayFoods();
         initActivities();
-        displayActivities();
+        happinessMessage();
+        hungerMessage();
+
+//        while (selectedAnimal.getHappinessLevel() < 10 && selectedAnimal.getHungerLevel() > 0) {
+//            playRescueAnimal();
+//        }
+
     }
 
-    private String initializeUser() {
-        System.out.println("Please enter your name.");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+    private void playRescueAnimal() {
+        System.out.println("Test");
 
     }
 
     private void initializeAnimals() {
-        Animal dog = new Animal("Apple");
+        Animal dog = new Animal("Dog");
         dog.setAge(3);
         dog.setHealthLevel(3);
         dog.setHungerLevel(10);
@@ -46,7 +49,7 @@ public class Game {
         dog.setFavoriteActivity("Fetch");
         animals[0] = dog;
 
-        Animal cat = new Animal("Pisi");
+        Animal cat = new Animal("Cat");
         cat.setAge(2);
         cat.setHealthLevel(4);
         cat.setHungerLevel(8);
@@ -54,6 +57,19 @@ public class Game {
         cat.setFavoriteFood("Fish");
         cat.setFavoriteActivity("Petting");
         animals[1] = cat;
+
+    }
+
+    private void initializeUser() {
+        System.out.println("Please enter your name.");
+        try {
+            String playerName = scanner.nextLine();
+            Rescuer player = new Rescuer(playerName);
+            player.setBudget(1000);
+            System.out.println("Hello " + player.getName());
+        } catch (InputMismatchException e) {
+            throw new RuntimeException("Please enter a valid name");
+        }
 
     }
 
@@ -73,6 +89,13 @@ public class Game {
         int animalNumber = scanner.nextInt();
         return animals[animalNumber -1];
     }
+
+    private String setAnimalName() {
+        System.out.println("Please enter a name for your animal.");
+        Scanner scanner = new Scanner(System.in);
+        return  scanner.nextLine();
+    }
+
 
     private void initFood() {
        Food meat = new Food ("Meat");
@@ -137,6 +160,20 @@ public class Game {
             if (availableActivities[i] != null) {
                 System.out.println((i +1) + ". " + availableActivities[i].getName());
             }
+        }
+    }
+
+    private void happinessMessage() {
+        if(selectedAnimal.getHappinessLevel() < 10) {
+            System.out.println("You should play with " + selectedAnimal.getName());
+            displayActivities();
+        }
+    }
+
+    private void hungerMessage() {
+        if (selectedAnimal.getHungerLevel() > 0) {
+            System.out.println("You should feed " + selectedAnimal.getName());
+            displayFoods();
         }
     }
 }
