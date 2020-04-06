@@ -176,4 +176,12 @@ public class Game {
             displayFoods();
         }
     }
+
+    private void requireFeeding() {
+        System.out.println("Please feed " + selectedAnimal.getName());
+        displayFoods();
+        System.out.println("Select one of the foods");
+        String selectedFood = scanner.nextLine();
+
+    }
 }
