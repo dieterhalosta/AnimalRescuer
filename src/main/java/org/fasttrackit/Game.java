@@ -12,6 +12,7 @@ public class Game {
     private List<Food> availableFood = new ArrayList<Food>();
     private PlayTime[] availableActivities = new PlayTime[4];
     private Animal selectedAnimal;
+    private Food selectedFood;
 
 
     public void start(){
@@ -25,17 +26,13 @@ public class Game {
         System.out.println(selectedAnimal.getName() + "'s status: \nHappiness Level: " + selectedAnimal.getHappinessLevel() + "\nHunger Level: " + selectedAnimal.getHungerLevel());
         initFood();
         initActivities();
-        happinessMessage();
-        hungerMessage();
+
+        requireFeeding();
 
 //        while (selectedAnimal.getHappinessLevel() < 10 && selectedAnimal.getHungerLevel() > 0) {
-//            playRescueAnimal();
+//            requireFeeding();
+//            requireActivity();
 //        }
-
-    }
-
-    private void playRescueAnimal() {
-        System.out.println("Test");
 
     }
 
@@ -163,25 +160,30 @@ public class Game {
         }
     }
 
-    private void happinessMessage() {
-        if(selectedAnimal.getHappinessLevel() < 10) {
-            System.out.println("You should play with " + selectedAnimal.getName());
-            displayActivities();
-        }
-    }
+    private Food getSelectedFoodFromUser(){
+        System.out.println("Select one of the foods");
+        Scanner scanner = new Scanner(System.in);
+        int selectedF = scanner.nextInt();
+        return availableFood.get(selectedF - 1);
 
-    private void hungerMessage() {
-        if (selectedAnimal.getHungerLevel() > 0) {
-            System.out.println("You should feed " + selectedAnimal.getName());
-            displayFoods();
-        }
     }
 
     private void requireFeeding() {
-        System.out.println("Please feed " + selectedAnimal.getName());
-        displayFoods();
-        System.out.println("Select one of the foods");
-        String selectedFood = scanner.nextLine();
+
+            System.out.println("Please feed " + selectedAnimal.getName());
+            displayFoods();
+            selectedFood = getSelectedFoodFromUser();
+            System.out.println(selectedFood.getName());
+
+
+
+    }
+
+    private void requireActivity() {
+        System.out.println("Please play " + selectedAnimal.getName());
+        displayActivities();
+        System.out.println("Select one of the activities");
+
 
     }
 }
