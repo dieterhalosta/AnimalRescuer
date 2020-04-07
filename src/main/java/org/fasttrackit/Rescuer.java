@@ -19,20 +19,16 @@ public class Rescuer extends Human {
         System.out.println("-------------------------------------------------------------------------------");
         if (food.getName().equals(animal.getFavoriteFood())) {
             System.out.println(getName() + " just gave some " + food.getName() + " to " + animal.getName() + "!");
-            animal.setHungerLevel(animal.getHungerLevel()-1);
+            animal.setHungerLevel(animal.getHungerLevel()-2);
             System.out.println(animal.getName() + "s hunger level is now: " + animal.getHungerLevel());
             animal.setHappinessLevel(animal.getHappinessLevel()+2);
             System.out.println(animal.getName() + "s happiness level is now: " + animal.getHappinessLevel());
-            animal.setHealthLevel(animal.getHealthLevel()+1);
-            System.out.println(animal.getName() + "s health level is now: " + animal.getHealthLevel());
         } else {
             System.out.println(getName() + " just gave some " + food.getName() + " to " + animal.getName() + "!");
             animal.setHungerLevel(animal.getHungerLevel()-1);
             System.out.println(animal.getName() + "s hunger level is now: " + animal.getHungerLevel());
             animal.setHappinessLevel(animal.getHappinessLevel()+1);
             System.out.println(animal.getName() + "s happiness level is now: " + animal.getHappinessLevel());
-            animal.setHealthLevel(animal.getHealthLevel()+1);
-            System.out.println(animal.getName() + "s health level is now: " + animal.getHealthLevel());
         }
 
 

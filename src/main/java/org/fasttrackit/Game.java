@@ -4,7 +4,6 @@ import org.fasttrackit.utils.ScannerUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 
 public class Game {
@@ -28,7 +27,7 @@ public class Game {
         initActivities();
 
 
-        while (selectedAnimal.getHappinessLevel() < 10 && selectedAnimal.getHungerLevel() > 0) {
+        while (selectedAnimal.getHungerLevel() > 0 && selectedAnimal.getHappinessLevel() < 10) {
             requireFeeding();
             requireActivity();
         }
