@@ -58,13 +58,9 @@ public class Game {
 
     private void initializeUser() {
         System.out.println("Please enter your name.");
-        try {
-            String playerName = ScannerUtils.nextLine();
-            Rescuer player = new Rescuer(playerName);
-            System.out.println("Hello " + player.getName());
-        } catch (InputMismatchException e) {
-            throw new RuntimeException("Please enter a valid name");
-        }
+        String playerName = ScannerUtils.nextLine();
+        player = new Rescuer(playerName);
+        System.out.println("Hello " + player.getName());
 
     }
 
@@ -182,7 +178,6 @@ public class Game {
     private void requireActivity() {
         System.out.println("Please play " + selectedAnimal.getName());
         displayActivities();
-        System.out.println("Select one of the activities");
         PlayTime selectedPlayTime = getSelectedActivityFromUser();
         System.out.println(selectedPlayTime.getName());
         player.playing(selectedAnimal, selectedPlayTime);
