@@ -12,6 +12,7 @@ public class Game {
     private List<Food> availableFood = new ArrayList<Food>();
     private PlayTime[] availableActivities = new PlayTime[4];
     private Animal selectedAnimal;
+    private Rescuer player;
 
 
     public void start(){
@@ -26,12 +27,11 @@ public class Game {
         initFood();
         initActivities();
 
-        requireFeeding();
 
-//        while (selectedAnimal.getHappinessLevel() < 10 && selectedAnimal.getHungerLevel() > 0) {
-//            requireFeeding();
-//            requireActivity();
-//        }
+        while (selectedAnimal.getHappinessLevel() < 10 && selectedAnimal.getHungerLevel() > 0) {
+            requireFeeding();
+            requireActivity();
+        }
 
     }
 
@@ -157,20 +157,25 @@ public class Game {
     }
 
     private Food getSelectedFoodFromUser(){
-        System.out.println("Select one of the foods");
+        System.out.println("Select one of the foods.");
         int selectedF = ScannerUtils.nextSingleInt();
         return availableFood.get(selectedF - 1);
 
     }
 
-    private void requireFeeding() {
+    private PlayTime getSelectedActivityFromUser(){
+        System.out.println("Select one of the activities.");
+        int selectedA = ScannerUtils.nextSingleInt();
+        return availableActivities[selectedA -1];
 
+    }
+
+    private void requireFeeding() {
             System.out.println("Please feed " + selectedAnimal.getName());
             displayFoods();
             Food selectedFood = getSelectedFoodFromUser();
             System.out.println(selectedFood.getName());
-
-
+            player.feeding(selectedAnimal,selectedFood);
 
     }
 
@@ -178,6 +183,9 @@ public class Game {
         System.out.println("Please play " + selectedAnimal.getName());
         displayActivities();
         System.out.println("Select one of the activities");
+        PlayTime selectedPlayTime = getSelectedActivityFromUser();
+        System.out.println(selectedPlayTime.getName());
+        player.playing(selectedAnimal, selectedPlayTime);
 
 
     }
