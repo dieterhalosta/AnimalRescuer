@@ -1,18 +1,17 @@
 package org.fasttrackit;
 
+import org.fasttrackit.utils.ScannerUtils;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 public class Game {
-    Scanner scanner = new Scanner(System.in);
     private Animal[] animals = new Animal[2];
     private List<Food> availableFood = new ArrayList<Food>();
     private PlayTime[] availableActivities = new PlayTime[4];
     private Animal selectedAnimal;
-    private Food selectedFood;
 
 
     public void start(){
@@ -60,9 +59,8 @@ public class Game {
     private void initializeUser() {
         System.out.println("Please enter your name.");
         try {
-            String playerName = scanner.nextLine();
+            String playerName = ScannerUtils.nextLine();
             Rescuer player = new Rescuer(playerName);
-            player.setBudget(1000);
             System.out.println("Hello " + player.getName());
         } catch (InputMismatchException e) {
             throw new RuntimeException("Please enter a valid name");
@@ -82,15 +80,13 @@ public class Game {
 
     private Animal getSelectedAnimalFromUser(){
         System.out.println("Please select an animal.");
-        Scanner scanner = new Scanner(System.in);
-        int animalNumber = scanner.nextInt();
+        int animalNumber = ScannerUtils.nextSingleInt();
         return animals[animalNumber -1];
     }
 
     private String setAnimalName() {
         System.out.println("Please enter a name for your animal.");
-        Scanner scanner = new Scanner(System.in);
-        return  scanner.nextLine();
+        return  ScannerUtils.nextLine();
     }
 
 
@@ -162,8 +158,7 @@ public class Game {
 
     private Food getSelectedFoodFromUser(){
         System.out.println("Select one of the foods");
-        Scanner scanner = new Scanner(System.in);
-        int selectedF = scanner.nextInt();
+        int selectedF = ScannerUtils.nextSingleInt();
         return availableFood.get(selectedF - 1);
 
     }
@@ -172,7 +167,7 @@ public class Game {
 
             System.out.println("Please feed " + selectedAnimal.getName());
             displayFoods();
-            selectedFood = getSelectedFoodFromUser();
+            Food selectedFood = getSelectedFoodFromUser();
             System.out.println(selectedFood.getName());
 
 
