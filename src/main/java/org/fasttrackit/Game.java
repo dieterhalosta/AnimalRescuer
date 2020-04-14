@@ -110,10 +110,13 @@ public class Game {
 
     private void displayFoods() {
         System.out.println("This are the available foods: ");
-
+        System.out.println("This are the available foods: ");
+        int numberForFood = 1;
         for (Food food : availableFood){
             if (food.getName() != null) {
-                System.out.println(food.getName());
+
+                System.out.println(numberForFood + " " + food.getName());
+                numberForFood++;
             }
         }
     }
